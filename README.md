@@ -46,7 +46,9 @@ Now, you can use the following methods:
 
 - `get_bus_lines(bus_stop_id, bus_stop_no)`: Returns an array of bus lines (e.g. 527, 141...) that depart from a given bus stop.
 
-- `get_closest_departures(server_response, script_starting_time, bus_line, number_of_departures)`: From the server's response from `get_line_departure_hours()`, find a given number of closest departures. The result is an array of hashes with "bus_line" and "time" entries.
+- `get_line_departure_hours(bus_stop_id, bus_stop_no, bus_line)`: Returns the server response with all the hours of departure of a given bus line from a given bus stop.
+
+- `get_closest_departures(server_response, script_starting_time, bus_line, number_of_departures)`: Given the server's response from `get_line_departure_hours()`, finds a given number of closest departures. The result is an array of hashes with "bus_line" and "time" entries.
 
 ## License
 
