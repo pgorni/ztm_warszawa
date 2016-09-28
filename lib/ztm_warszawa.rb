@@ -37,6 +37,7 @@ class ZtmWarszawa
 
 	# Returns the server response with all the hours of departure of a given bus line from a given bus stop.
 	def get_line_departure_hours(bus_stop_id, bus_stop_no, bus_line)
+		raise 'Night bus lines are not supported due to some server-side errors.' if bus_line.start_with? "N"
 		url = "https://api.um.warszawa.pl/api/action/dbtimetable_get?id=e923fa0e-d96c-43f9-ae6e-60518c9f3238&busstopId=#{bus_stop_id}&busstopNr=#{bus_stop_no}&line=#{bus_line}&apikey=#{@api_key}"
 		response = HTTParty.get(url).parsed_response["result"]
 		return response
