@@ -14,9 +14,9 @@ class ZtmWarszawa
 
 	attr_writer :api_key
 
-	#def initialize(api_key)
-		#@api_key = api_key
-	#end
+	def initialize(api_key = nil)
+		@api_key = api_key
+	end
 
 	# Queries the ZTM API to get the bus stop's ID from its name.
 	# The ID is required for all the latter operations.
